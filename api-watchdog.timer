@@ -1,0 +1,12 @@
+[Unit]
+Description=Run API Health Check every 5 minutes
+Requires="Name of the service to be checked"
+
+[Timer]
+Unit="Name of the service to be checked"
+OnBootSec=1min
+OnUnitActiveSec="time in minutes how often to check the service example 5min"
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
